@@ -45,6 +45,7 @@
 		02494835279B3DAD00182C79 /* OrangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02494839279B3DAD00182C79 /* OrangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITests.swift; sourceTree = "<group>"; };
 		0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02494848279B3DEB00182C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 		0249481C279B3DAB00182C79 /* Orange */ = {
 			isa = PBXGroup;
 			children = (
+				02494848279B3DEB00182C79 /* Info.plist */,
 				0249481D279B3DAB00182C79 /* AppDelegate.swift */,
 				0249481F279B3DAB00182C79 /* ViewController.swift */,
 				02494821279B3DAD00182C79 /* Assets.xcassets */,
@@ -427,6 +429,7 @@
 				DEVELOPMENT_TEAM = RYYCVPYKXT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Orange/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -454,6 +457,7 @@
 				DEVELOPMENT_TEAM = RYYCVPYKXT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Orange/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
