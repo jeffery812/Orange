@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0249481E279B3DAB00182C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249481D279B3DAB00182C79 /* AppDelegate.swift */; };
+		02494820279B3DAB00182C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249481F279B3DAB00182C79 /* ViewController.swift */; };
+		02494822279B3DAD00182C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02494821279B3DAD00182C79 /* Assets.xcassets */; };
+		02494825279B3DAD00182C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02494823279B3DAD00182C79 /* Main.storyboard */; };
+		02494830279B3DAD00182C79 /* OrangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249482F279B3DAD00182C79 /* OrangeTests.swift */; };
+		0249483A279B3DAD00182C79 /* OrangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02494839279B3DAD00182C79 /* OrangeUITests.swift */; };
+		0249483C279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0249482C279B3DAD00182C79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02494812279B3DAB00182C79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02494819279B3DAB00182C79;
+			remoteInfo = Orange;
+		};
+		02494836279B3DAD00182C79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02494812279B3DAB00182C79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02494819279B3DAB00182C79;
+			remoteInfo = Orange;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0249481A279B3DAB00182C79 /* Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0249481D279B3DAB00182C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0249481F279B3DAB00182C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02494821279B3DAD00182C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02494824279B3DAD00182C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02494826279B3DAD00182C79 /* Orange.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orange.entitlements; sourceTree = "<group>"; };
+		0249482B279B3DAD00182C79 /* OrangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0249482F279B3DAD00182C79 /* OrangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeTests.swift; sourceTree = "<group>"; };
+		02494835279B3DAD00182C79 /* OrangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02494839279B3DAD00182C79 /* OrangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITests.swift; sourceTree = "<group>"; };
+		0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02494817279B3DAB00182C79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02494828279B3DAD00182C79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02494832279B3DAD00182C79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02494811279B3DAB00182C79 = {
+			isa = PBXGroup;
+			children = (
+				0249481C279B3DAB00182C79 /* Orange */,
+				0249482E279B3DAD00182C79 /* OrangeTests */,
+				02494838279B3DAD00182C79 /* OrangeUITests */,
+				0249481B279B3DAB00182C79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0249481B279B3DAB00182C79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0249481A279B3DAB00182C79 /* Orange.app */,
+				0249482B279B3DAD00182C79 /* OrangeTests.xctest */,
+				02494835279B3DAD00182C79 /* OrangeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0249481C279B3DAB00182C79 /* Orange */ = {
+			isa = PBXGroup;
+			children = (
+				0249481D279B3DAB00182C79 /* AppDelegate.swift */,
+				0249481F279B3DAB00182C79 /* ViewController.swift */,
+				02494821279B3DAD00182C79 /* Assets.xcassets */,
+				02494823279B3DAD00182C79 /* Main.storyboard */,
+				02494826279B3DAD00182C79 /* Orange.entitlements */,
+			);
+			path = Orange;
+			sourceTree = "<group>";
+		};
+		0249482E279B3DAD00182C79 /* OrangeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0249482F279B3DAD00182C79 /* OrangeTests.swift */,
+			);
+			path = OrangeTests;
+			sourceTree = "<group>";
+		};
+		02494838279B3DAD00182C79 /* OrangeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				02494839279B3DAD00182C79 /* OrangeUITests.swift */,
+				0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */,
+			);
+			path = OrangeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02494819279B3DAB00182C79 /* Orange */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0249483F279B3DAD00182C79 /* Build configuration list for PBXNativeTarget "Orange" */;
+			buildPhases = (
+				02494816279B3DAB00182C79 /* Sources */,
+				02494817279B3DAB00182C79 /* Frameworks */,
+				02494818279B3DAB00182C79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Orange;
+			productName = Orange;
+			productReference = 0249481A279B3DAB00182C79 /* Orange.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0249482A279B3DAD00182C79 /* OrangeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02494842279B3DAD00182C79 /* Build configuration list for PBXNativeTarget "OrangeTests" */;
+			buildPhases = (
+				02494827279B3DAD00182C79 /* Sources */,
+				02494828279B3DAD00182C79 /* Frameworks */,
+				02494829279B3DAD00182C79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0249482D279B3DAD00182C79 /* PBXTargetDependency */,
+			);
+			name = OrangeTests;
+			productName = OrangeTests;
+			productReference = 0249482B279B3DAD00182C79 /* OrangeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		02494834279B3DAD00182C79 /* OrangeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02494845279B3DAD00182C79 /* Build configuration list for PBXNativeTarget "OrangeUITests" */;
+			buildPhases = (
+				02494831279B3DAD00182C79 /* Sources */,
+				02494832279B3DAD00182C79 /* Frameworks */,
+				02494833279B3DAD00182C79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02494837279B3DAD00182C79 /* PBXTargetDependency */,
+			);
+			name = OrangeUITests;
+			productName = OrangeUITests;
+			productReference = 02494835279B3DAD00182C79 /* OrangeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02494812279B3DAB00182C79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					02494819279B3DAB00182C79 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					0249482A279B3DAD00182C79 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 02494819279B3DAB00182C79;
+					};
+					02494834279B3DAD00182C79 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 02494819279B3DAB00182C79;
+					};
+				};
+			};
+			buildConfigurationList = 02494815279B3DAB00182C79 /* Build configuration list for PBXProject "Orange" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02494811279B3DAB00182C79;
+			productRefGroup = 0249481B279B3DAB00182C79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02494819279B3DAB00182C79 /* Orange */,
+				0249482A279B3DAD00182C79 /* OrangeTests */,
+				02494834279B3DAD00182C79 /* OrangeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02494818279B3DAB00182C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02494822279B3DAD00182C79 /* Assets.xcassets in Resources */,
+				02494825279B3DAD00182C79 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02494829279B3DAD00182C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02494833279B3DAD00182C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02494816279B3DAB00182C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02494820279B3DAB00182C79 /* ViewController.swift in Sources */,
+				0249481E279B3DAB00182C79 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02494827279B3DAD00182C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02494830279B3DAD00182C79 /* OrangeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02494831279B3DAD00182C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0249483C279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift in Sources */,
+				0249483A279B3DAD00182C79 /* OrangeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0249482D279B3DAD00182C79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02494819279B3DAB00182C79 /* Orange */;
+			targetProxy = 0249482C279B3DAD00182C79 /* PBXContainerItemProxy */;
+		};
+		02494837279B3DAD00182C79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02494819279B3DAB00182C79 /* Orange */;
+			targetProxy = 02494836279B3DAD00182C79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		02494823279B3DAD00182C79 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02494824279B3DAD00182C79 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0249483D279B3DAD00182C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0249483E279B3DAD00182C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		02494840279B3DAD00182C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Orange/Orange.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crafttang.Orange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		02494841279B3DAD00182C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Orange/Orange.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crafttang.Orange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		02494843279B3DAD00182C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crafttang.OrangeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orange.app/Contents/MacOS/Orange";
+			};
+			name = Debug;
+		};
+		02494844279B3DAD00182C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crafttang.OrangeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orange.app/Contents/MacOS/Orange";
+			};
+			name = Release;
+		};
+		02494846279B3DAD00182C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crafttang.OrangeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Orange;
+			};
+			name = Debug;
+		};
+		02494847279B3DAD00182C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYYCVPYKXT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crafttang.OrangeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Orange;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02494815279B3DAB00182C79 /* Build configuration list for PBXProject "Orange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0249483D279B3DAD00182C79 /* Debug */,
+				0249483E279B3DAD00182C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0249483F279B3DAD00182C79 /* Build configuration list for PBXNativeTarget "Orange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02494840279B3DAD00182C79 /* Debug */,
+				02494841279B3DAD00182C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02494842279B3DAD00182C79 /* Build configuration list for PBXNativeTarget "OrangeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02494843279B3DAD00182C79 /* Debug */,
+				02494844279B3DAD00182C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02494845279B3DAD00182C79 /* Build configuration list for PBXNativeTarget "OrangeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02494846279B3DAD00182C79 /* Debug */,
+				02494847279B3DAD00182C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02494812279B3DAB00182C79 /* Project object */;
+}
