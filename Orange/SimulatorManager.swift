@@ -15,21 +15,22 @@ class SimulatorManager {
         print("error: \(s.error)")
     }
     
-    private func shell(_ launchPath: String, arguments: String...) -> (output: String, error: String) {
-        let process = Process()
-        process.launchPath = launchPath
-        process.arguments = arguments
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        process.standardOutput = outputPipe
-        process.standardError = errorPipe
-        process.launch()
-        
-        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-        let output = String(data: outputData, encoding: String.Encoding.utf8)
-        let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-        let error = String(data: errorData, encoding: String.Encoding.utf8)
-        
-        return (output ?? "", error ?? "")
-    }
+    
+}
+func shell(_ launchPath: String, arguments: String...) -> (output: String, error: String) {
+    let process = Process()
+    process.launchPath = launchPath
+    process.arguments = arguments
+    let outputPipe = Pipe()
+    let errorPipe = Pipe()
+    process.standardOutput = outputPipe
+    process.standardError = errorPipe
+    process.launch()
+    
+    let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+    let output = String(data: outputData, encoding: String.Encoding.utf8)
+    let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+    let error = String(data: errorData, encoding: String.Encoding.utf8)
+    
+    return (output ?? "", error ?? "")
 }

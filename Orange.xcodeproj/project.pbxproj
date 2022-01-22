@@ -52,7 +52,7 @@
 		02494835279B3DAD00182C79 /* OrangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02494839279B3DAD00182C79 /* OrangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITests.swift; sourceTree = "<group>"; };
 		0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		02494848279B3DEB00182C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		02494848279B3DEB00182C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02494849279B403D00182C79 /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
 		029715B2279C169C0092FEFC /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		029715B4279C171C0092FEFC /* Runtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
@@ -110,15 +110,13 @@
 		0249481C279B3DAB00182C79 /* Orange */ = {
 			isa = PBXGroup;
 			children = (
-				029715B1279C168D0092FEFC /* Model */,
-				02494848279B3DEB00182C79 /* Info.plist */,
+				02494826279B3DAD00182C79 /* Orange.entitlements */,
 				0249481D279B3DAB00182C79 /* AppDelegate.swift */,
 				02494849279B403D00182C79 /* StatusItemManager.swift */,
 				029715BC279C18F70092FEFC /* SimulatorManager.swift */,
-				0249481F279B3DAB00182C79 /* ViewController.swift */,
-				02494821279B3DAD00182C79 /* Assets.xcassets */,
-				02494823279B3DAD00182C79 /* Main.storyboard */,
-				02494826279B3DAD00182C79 /* Orange.entitlements */,
+				029715BF279C1E730092FEFC /* Views */,
+				029715BE279C1E5E0092FEFC /* Supporting Files */,
+				029715B1279C168D0092FEFC /* Models */,
 			);
 			path = Orange;
 			sourceTree = "<group>";
@@ -141,7 +139,7 @@
 			path = OrangeUITests;
 			sourceTree = "<group>";
 		};
-		029715B1279C168D0092FEFC /* Model */ = {
+		029715B1279C168D0092FEFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				029715B2279C169C0092FEFC /* Device.swift */,
@@ -149,7 +147,25 @@
 				029715B6279C17B90092FEFC /* DeviceType.swift */,
 				029715B8279C183E0092FEFC /* Pair.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		029715BE279C1E5E0092FEFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02494848279B3DEB00182C79 /* Info.plist */,
+				02494821279B3DAD00182C79 /* Assets.xcassets */,
+				02494823279B3DAD00182C79 /* Main.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		029715BF279C1E730092FEFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0249481F279B3DAB00182C79 /* ViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,13 +475,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Orange/Orange.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RYYCVPYKXT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Orange/Info.plist;
+				INFOPLIST_FILE = "Orange/Supporting Files/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Zhihui Tang. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -488,13 +505,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Orange/Orange.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RYYCVPYKXT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Orange/Info.plist;
+				INFOPLIST_FILE = "Orange/Supporting Files/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Zhihui Tang. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
