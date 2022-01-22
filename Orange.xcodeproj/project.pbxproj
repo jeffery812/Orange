@@ -14,6 +14,13 @@
 		02494830279B3DAD00182C79 /* OrangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249482F279B3DAD00182C79 /* OrangeTests.swift */; };
 		0249483A279B3DAD00182C79 /* OrangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02494839279B3DAD00182C79 /* OrangeUITests.swift */; };
 		0249483C279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */; };
+		0249484A279B403D00182C79 /* StatusItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02494849279B403D00182C79 /* StatusItemManager.swift */; };
+		029715B3279C169C0092FEFC /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715B2279C169C0092FEFC /* Device.swift */; };
+		029715B5279C171C0092FEFC /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715B4279C171C0092FEFC /* Runtime.swift */; };
+		029715B7279C17B90092FEFC /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715B6279C17B90092FEFC /* DeviceType.swift */; };
+		029715B9279C183E0092FEFC /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715B8279C183E0092FEFC /* Pair.swift */; };
+		029715BB279C18930092FEFC /* simctrl.json in Resources */ = {isa = PBXBuildFile; fileRef = 029715BA279C18930092FEFC /* simctrl.json */; };
+		029715BD279C18F70092FEFC /* SimulatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715BC279C18F70092FEFC /* SimulatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,13 @@
 		02494839279B3DAD00182C79 /* OrangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITests.swift; sourceTree = "<group>"; };
 		0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		02494848279B3DEB00182C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		02494849279B403D00182C79 /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
+		029715B2279C169C0092FEFC /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		029715B4279C171C0092FEFC /* Runtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
+		029715B6279C17B90092FEFC /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		029715B8279C183E0092FEFC /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		029715BA279C18930092FEFC /* simctrl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = simctrl.json; sourceTree = "<group>"; };
+		029715BC279C18F70092FEFC /* SimulatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +110,11 @@
 		0249481C279B3DAB00182C79 /* Orange */ = {
 			isa = PBXGroup;
 			children = (
+				029715B1279C168D0092FEFC /* Model */,
 				02494848279B3DEB00182C79 /* Info.plist */,
 				0249481D279B3DAB00182C79 /* AppDelegate.swift */,
+				02494849279B403D00182C79 /* StatusItemManager.swift */,
+				029715BC279C18F70092FEFC /* SimulatorManager.swift */,
 				0249481F279B3DAB00182C79 /* ViewController.swift */,
 				02494821279B3DAD00182C79 /* Assets.xcassets */,
 				02494823279B3DAD00182C79 /* Main.storyboard */,
@@ -110,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0249482F279B3DAD00182C79 /* OrangeTests.swift */,
+				029715BA279C18930092FEFC /* simctrl.json */,
 			);
 			path = OrangeTests;
 			sourceTree = "<group>";
@@ -121,6 +139,17 @@
 				0249483B279B3DAD00182C79 /* OrangeUITestsLaunchTests.swift */,
 			);
 			path = OrangeUITests;
+			sourceTree = "<group>";
+		};
+		029715B1279C168D0092FEFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				029715B2279C169C0092FEFC /* Device.swift */,
+				029715B4279C171C0092FEFC /* Runtime.swift */,
+				029715B6279C17B90092FEFC /* DeviceType.swift */,
+				029715B8279C183E0092FEFC /* Pair.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029715BB279C18930092FEFC /* simctrl.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0249484A279B403D00182C79 /* StatusItemManager.swift in Sources */,
+				029715B7279C17B90092FEFC /* DeviceType.swift in Sources */,
 				02494820279B3DAB00182C79 /* ViewController.swift in Sources */,
 				0249481E279B3DAB00182C79 /* AppDelegate.swift in Sources */,
+				029715BD279C18F70092FEFC /* SimulatorManager.swift in Sources */,
+				029715B3279C169C0092FEFC /* Device.swift in Sources */,
+				029715B9279C183E0092FEFC /* Pair.swift in Sources */,
+				029715B5279C171C0092FEFC /* Runtime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +466,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Orange/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Zhihui Tang. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,7 +495,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Orange/Info.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Zhihui Tang. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
