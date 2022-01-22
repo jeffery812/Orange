@@ -17,17 +17,21 @@ class OrangeTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testSimCtrlResult() throws {
+        let fileName = "simctrl"
+        guard let path = Bundle(for: type(of: self)).path(forResource: fileName, ofType: "json") else {
+            fatalError("\(fileName).json not found")
         }
+        guard let jsonString = try? String(contentsOfFile: path, encoding: .utf8) else {
+            fatalError("Unable to convert \(fileName).json to String")
+        }
+        let manager = SimulatorManager(json: jsonString)
+        XCTAssertEqual(manager.simCtrlResult?.devicetypes.count, 76)
+        XCTAssertEqual(manager.simCtrlResult?.runtimes.count, 4)
+        XCTAssertEqual(manager.simCtrlResult?.devices.count, 10)
+        XCTAssertEqual(manager.simCtrlResult?.pairs.count, 14)
+        XCTAssertEqual(manager.simCtrlResult?.pairs["9FDFDF13-96C0-4CDD-9EEE-10DD11C3FC45"]?.watch.name, "Apple Watch Series 6 - 44mm")
+        XCTAssertEqual(manager.simCtrlResult?.pairs["9FDFDF13-96C0-4CDD-9EEE-10DD11C3FC45"]?.phone.name, "iPhone 13 Pro Max")
     }
-
 }

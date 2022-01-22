@@ -21,6 +21,8 @@
 		029715B9279C183E0092FEFC /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715B8279C183E0092FEFC /* Pair.swift */; };
 		029715BB279C18930092FEFC /* simctrl.json in Resources */ = {isa = PBXBuildFile; fileRef = 029715BA279C18930092FEFC /* simctrl.json */; };
 		029715BD279C18F70092FEFC /* SimulatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715BC279C18F70092FEFC /* SimulatorManager.swift */; };
+		029715C2279C3BBC0092FEFC /* SimCtrlResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715C1279C3BBC0092FEFC /* SimCtrlResult.swift */; };
+		029715C5279C3E210092FEFC /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715C4279C3E210092FEFC /* JSONDecoder+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		029715B8279C183E0092FEFC /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		029715BA279C18930092FEFC /* simctrl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = simctrl.json; sourceTree = "<group>"; };
 		029715BC279C18F70092FEFC /* SimulatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorManager.swift; sourceTree = "<group>"; };
+		029715C1279C3BBC0092FEFC /* SimCtrlResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCtrlResult.swift; sourceTree = "<group>"; };
+		029715C4279C3E210092FEFC /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +114,14 @@
 		0249481C279B3DAB00182C79 /* Orange */ = {
 			isa = PBXGroup;
 			children = (
+				029715C3279C3E180092FEFC /* Extensions */,
+				029715B1279C168D0092FEFC /* Models */,
+				029715BF279C1E730092FEFC /* Views */,
+				029715BE279C1E5E0092FEFC /* Supporting Files */,
 				02494826279B3DAD00182C79 /* Orange.entitlements */,
 				0249481D279B3DAB00182C79 /* AppDelegate.swift */,
 				02494849279B403D00182C79 /* StatusItemManager.swift */,
 				029715BC279C18F70092FEFC /* SimulatorManager.swift */,
-				029715BF279C1E730092FEFC /* Views */,
-				029715BE279C1E5E0092FEFC /* Supporting Files */,
-				029715B1279C168D0092FEFC /* Models */,
 			);
 			path = Orange;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 				029715B4279C171C0092FEFC /* Runtime.swift */,
 				029715B6279C17B90092FEFC /* DeviceType.swift */,
 				029715B8279C183E0092FEFC /* Pair.swift */,
+				029715C1279C3BBC0092FEFC /* SimCtrlResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +172,14 @@
 				0249481F279B3DAB00182C79 /* ViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		029715C3279C3E180092FEFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				029715C4279C3E210092FEFC /* JSONDecoder+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,10 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029715C2279C3BBC0092FEFC /* SimCtrlResult.swift in Sources */,
 				0249484A279B403D00182C79 /* StatusItemManager.swift in Sources */,
 				029715B7279C17B90092FEFC /* DeviceType.swift in Sources */,
 				02494820279B3DAB00182C79 /* ViewController.swift in Sources */,
 				0249481E279B3DAB00182C79 /* AppDelegate.swift in Sources */,
+				029715C5279C3E210092FEFC /* JSONDecoder+.swift in Sources */,
 				029715BD279C18F70092FEFC /* SimulatorManager.swift in Sources */,
 				029715B3279C169C0092FEFC /* Device.swift in Sources */,
 				029715B9279C183E0092FEFC /* Pair.swift in Sources */,

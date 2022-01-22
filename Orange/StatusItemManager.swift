@@ -8,6 +8,7 @@
 import Cocoa
 
 class StatusItemManager {
+    private let simulatorManager: SimulatorManager
     private let statusItem: NSStatusItem
     private var systemItems = [ NSMenuItem(title: "Preferences...", action: #selector(preference(_:)), keyEquivalent: ","),
                           NSMenuItem(title: "Refresh", action: #selector(refresh(_:)), keyEquivalent: "r"),
@@ -15,14 +16,16 @@ class StatusItemManager {
 
     init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        simulatorManager = SimulatorManager(json: shell("/usr/bin/xcrun", arguments: "simctl", "list", "-j").output)
+        let runtimes = simulatorManager.simCtrlResult?.runtimes
         let menu = NSMenu()
-        systemItems.forEach{
+        systemItems.forEach {
             menu.addItem($0)
             $0.target = self
         }
         statusItem.menu = menu
         statusItem.button?.image = NSImage(named:NSImage.Name("statusItem_icon"))
-        let simulator = SimulatorManager().getAllSimulators()
+        print(runtimes?.count)
     }
     
     

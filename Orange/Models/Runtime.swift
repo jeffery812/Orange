@@ -10,7 +10,7 @@ import Foundation
 struct Runtime: Decodable {
     let name: String
     let bundlePath: String
-    let availabilityError: String
+    let availabilityError: String?
     let buildversion: String
     let runtimeRoot: String
     let identifier: String

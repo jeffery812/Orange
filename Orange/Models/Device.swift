@@ -8,11 +8,11 @@
 import Foundation
 
 struct Device: Decodable {
-    let availabilityError: String
+    let availabilityError: String?
     let dataPath: String
     let logPath: String
     let udid: String
-    let isAvailable: String
+    let isAvailable: Bool
     let deviceTypeIdentifier: String
     let state: String
     let name: String

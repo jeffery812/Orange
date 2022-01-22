@@ -8,15 +8,18 @@
 import Foundation
 
 class SimulatorManager {
+    var simCtrlResult: SimCtrlResult?
     
-    func getAllSimulators() {
-        let s = shell("/usr/bin/xcrun", arguments: "simctl", "list", "-j")
-        print("output: \(s.output)")
-        print("error: \(s.error)")
+    init(json: String) {
+        do {
+            guard let data = json.data(using: .utf8) else { return }
+            simCtrlResult = try JSONDecoder().decode(SimCtrlResult.self, from: data)
+        } catch {
+            print(error)
+        }
     }
-    
-    
 }
+
 func shell(_ launchPath: String, arguments: String...) -> (output: String, error: String) {
     let process = Process()
     process.launchPath = launchPath
