@@ -13,3 +13,25 @@ struct SimCtrlResult: Decodable {
     let devices: [String: [Device]]
     let pairs: [String: Pair]
 }
+//
+//extension SimCtrlResult {
+//    var applications: [Application] {
+//        let aa = devices.compactMap {
+//            print($0.value)
+//            
+//        }
+//        for (version, deviceList) in devices {
+//            for device in deviceList {
+//                print("\(version), \(device.name)")
+//                Application(device: device, rootPath: device.dataPath)
+//            }
+//        }
+//       
+//        let a = devices.map { (version, deviceList) in
+//            Application(rootPath: "")
+//        }
+//        return []
+//    }
+//}
+
+

@@ -6,13 +6,16 @@
 //
 
 import Cocoa
+import os
+
+let logger = Logger(subsystem: "com.crafttang", category: "Orange")
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private var statusItemManager: StatusItemManager?
+    private var statusItemManager: MenuManager?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItemManager = StatusItemManager()
+        statusItemManager = MenuManager()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -8,19 +8,33 @@
 import Foundation
 
 class SimulatorManager {
-    var simCtrlResult: SimCtrlResult?
+    private var simCtrlResult: SimCtrlResult?
     
     init(json: String) {
+        guard let data = json.data(using: .utf8) else { return }
         do {
-            guard let data = json.data(using: .utf8) else { return }
             simCtrlResult = try JSONDecoder().decode(SimCtrlResult.self, from: data)
         } catch {
-            print(error)
+            logger.error("\(error.localizedDescription)")
         }
+    }
+    
+    static func getSimCtrlResult() -> String {
+        let result = shell("/usr/bin/xcrun", arguments: "simctl", "list", "-j")
+        guard let json = result.output else {
+            logger.critical("xcrun failed: \(result.error ?? "unknown")")
+            return ""
+        }
+        return json
+    }
+    
+    var devices: [String: [Device]] {
+        simCtrlResult?.devices ?? [:]
     }
 }
 
-func shell(_ launchPath: String, arguments: String...) -> (output: String, error: String) {
+@discardableResult
+func shell(_ launchPath: String, arguments: String...) -> (output: String?, error: String?) {
     let process = Process()
     process.launchPath = launchPath
     process.arguments = arguments
@@ -35,5 +49,6 @@ func shell(_ launchPath: String, arguments: String...) -> (output: String, error
     let errorData = errorPipe.fileHandleForReading.readDataToEndOfFile()
     let error = String(data: errorData, encoding: String.Encoding.utf8)
     
-    return (output ?? "", error ?? "")
+    return (output, error)
 }
+
