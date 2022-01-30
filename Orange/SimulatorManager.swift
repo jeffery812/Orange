@@ -10,22 +10,28 @@ import Foundation
 class SimulatorManager {
     private var simCtrlResult: SimCtrlResult?
     
-    init(json: String) {
-        guard let data = json.data(using: .utf8) else { return }
-        do {
-            simCtrlResult = try JSONDecoder().decode(SimCtrlResult.self, from: data)
-        } catch {
-            logger.error("\(error.localizedDescription)")
-        }
+    init() {
+        simCtrlResult = getSimCtrlResult()
     }
     
-    static func getSimCtrlResult() -> String {
+    func getSimCtrlResult() -> SimCtrlResult? {
         let result = shell("/usr/bin/xcrun", arguments: "simctl", "list", "-j")
         guard let json = result.output else {
             logger.critical("xcrun failed: \(result.error ?? "unknown")")
-            return ""
+            return nil
         }
-        return json
+        
+        guard let data = json.data(using: .utf8) else { return nil }
+        do {
+            return try JSONDecoder().decode(SimCtrlResult.self, from: data)
+        } catch {
+            logger.error("\(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func refresh() {
+        simCtrlResult = getSimCtrlResult()
     }
     
     var devices: [String: [Device]] {
