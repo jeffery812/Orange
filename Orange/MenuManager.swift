@@ -19,19 +19,24 @@ class MenuManager {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         simulatorManager = SimulatorManager(json: SimulatorManager.getSimCtrlResult())
         
-        for (version, deviceList) in simulatorManager.devices {
+        var allApplications = [Application]()
+        for (_, deviceList) in simulatorManager.devices {
             for device in deviceList {
                 guard let applications = device.applications else {
                     continue
                 }
-                let simulatorMenuItem = NSMenuItem(title: version, action: nil, keyEquivalent: "")
-                menu.addItem(simulatorMenuItem)
-                for application in applications {
-                    menu.addItem(AppMenuItem(app: application))
-                }
+                allApplications.append(contentsOf: applications)
             }
         }
-        
+        for application in allApplications.sorted(by: { app1, app2 in
+            guard let date1 = app1.modified, let date2 = app2.modified else {
+                return false
+            }
+            return date1 > date2
+        }) {
+            menu.addItem(AppMenuItem(app: application))
+        }
+
         systemItems.forEach {
             menu.addItem($0)
             $0.target = self
@@ -39,6 +44,18 @@ class MenuManager {
         statusItem.menu = menu
         statusItem.button?.image = NSImage(named:NSImage.Name("statusItem_icon"))
         statusItem.button?.image?.isTemplate = true
+    }
+    
+    private func getAllApplications() {
+        var allApplications = [Application]()
+        for (_, deviceList) in simulatorManager.devices {
+            for device in deviceList {
+                guard let applications = device.applications else {
+                    continue
+                }
+                allApplications.append(contentsOf: applications)
+            }
+        }
     }
     
     
