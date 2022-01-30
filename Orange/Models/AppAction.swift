@@ -25,7 +25,7 @@ class ShowBundleContainerInFinder: AppAction {
     var title: String = "Show Bundle Container in Finder"
     
     @objc func execute() {
-        NSWorkspace.shared.open(app.rootPath)
+        NSWorkspace.shared.open(app.bundleContainer)
     }
 }
 
@@ -38,7 +38,20 @@ class ShowDataContainerInFinder: AppAction {
     var title: String = "Show Data Container in Finder"
     
     @objc func execute() {
-        NSWorkspace.shared.open(app.rootPath)
+        guard let url = app.dataContainer else {
+            let alert: NSAlert = NSAlert()
+            alert.messageText = String(format: "Cannot find %@", app.bundleDisplayName)
+            alert.informativeText = "Cannot find the data container file."
+            alert.alertStyle = .critical
+            alert.addButton(withTitle: "OK")
+            NSApp.activate(ignoringOtherApps: true)
+            let response = alert.runModal()
+            if response == NSApplication.ModalResponse.alertFirstButtonReturn {
+                app.uninstall()
+            }
+            return
+        }
+        NSWorkspace.shared.open(url)
     }
 }
 

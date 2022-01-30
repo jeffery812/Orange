@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 struct Device: Decodable {
     let availabilityError: String?
     let dataPath: URL
-    let logPath: String
+    let logPath: URL
     let udid: String
     let isAvailable: Bool
     let deviceTypeIdentifier: String
@@ -27,27 +28,47 @@ struct Device: Decodable {
 
 extension Device {
     var applications: [Application]? {
-        guard let files = try? FileManager.default.contentsOfDirectory(at: bundleContainerPath, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]) else {
+        guard let bundles = try? FileManager.default.contentsOfDirectory(
+            at: dataPath.appendingPathComponent("Containers/Bundle/Application"),
+            includingPropertiesForKeys: [.isDirectoryKey],
+            options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants])
+        else {
             return nil
         }
         
-        let userApplications = files.map {
-            Application(device: self, rootPath: $0)
-        }.compactMap { $0 }
+        guard let datas = try? FileManager.default.contentsOfDirectory(
+            at: dataPath.appendingPathComponent("Containers/Data/Application"),
+            includingPropertiesForKeys: [.isDirectoryKey],
+            options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants])
+        else {
+            return nil
+        }
+        
+        let identifierBundleMapping = bundles.reduce([String: URL]()) { dict, url in
+            var new = dict
+            new[identifier(of: url)] = url
+            return new
+        }
+        let identifierDataMapping = datas.reduce([String: URL]()) { dict, url in
+            var new = dict
+            new[identifier(of: url)] = url
+            return new
+        }
+        
+        let applications = identifierBundleMapping
+            .map { identifier, url in (url, identifierDataMapping[identifier]) }
+            .map { Application(device: self, bundleContainer: $0, dataContainer: $1) }
+            .compactMap { $0 }
 
-        return userApplications
+        return applications
     }
     
-    private var bundleContainerPath: URL {
-        dataPath.appendingPathComponent("Containers/Bundle/Application")
-    }
-
-    private var dataContainerPath: URL {
-        dataPath.appendingPathComponent("Containers/Data/Application")
-    }
-    
-    private var identifierBundleMap: [String: String] {
-        [:]
+    private func identifier(of url: URL) -> String {
+        guard let contents = NSDictionary(contentsOf: url.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist")),
+            let identifier = contents["MCMMetadataIdentifier"] as? String  else {
+            return "unknown"
+        }
+        return identifier
     }
     
     private func identifier(with url: URL) -> String? {

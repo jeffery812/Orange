@@ -10,7 +10,8 @@ import AppKit
 struct Application {
     //let uuid: String
     let device: Device
-    let rootPath: URL
+    let bundleContainer: URL
+    let dataContainer: URL?
     private(set) var bundleDisplayName: String
     let bundleIdentifier: String
     private(set) var version: String? = nil
@@ -21,16 +22,18 @@ struct Application {
     let bundleShortVersion: String
     let bundleVersion: String
     
-    init?(device: Device, rootPath: URL) {
+    init?(device: Device, bundleContainer: URL, dataContainer: URL?) {
         self.device = device
-        self.rootPath = rootPath
+        self.bundleContainer = bundleContainer
+        self.dataContainer = dataContainer
         let fileManager = FileManager.default
-        //print("rootPath: \(rootPath)")
-        guard let appName = fileManager.application(of: rootPath) else {
+        //print("bundleContainer: \(bundleContainer)")
+        print("dataContainer: \(dataContainer)")
+        guard let appName = fileManager.application(of: bundleContainer) else {
             return nil
         }
 
-        let metaData = NSDictionary(contentsOf: rootPath.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist"))
+        let metaData = NSDictionary(contentsOf: bundleContainer.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist"))
         guard let identifier = metaData?["MCMMetadataIdentifier"] as? String else {
             return nil
         }
@@ -63,8 +66,6 @@ struct Application {
         }else{
             image = #imageLiteral(resourceName: "default_icon").appIcon()
         }
-        
-        
     }
 }
 

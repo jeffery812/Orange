@@ -15,7 +15,7 @@ class AppMenu: NSMenu {
     init(app: Application) {
         super.init(title: "Actions")
         
-        let actions: [AppAction.Type] = [ShowBundleContainerInFinder.self, LaunchApp.self, UninstallApp.self]
+        let actions: [AppAction.Type] = [ShowBundleContainerInFinder.self, ShowDataContainerInFinder.self, LaunchApp.self, UninstallApp.self]
         actions.forEach { ActionType in
             let action = ActionType.init(app)
             
