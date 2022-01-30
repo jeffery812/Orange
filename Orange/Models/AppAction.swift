@@ -25,7 +25,7 @@ class ShowBundleContainerInFinder: AppAction {
     var title: String = "Show Bundle Container in Finder"
     
     @objc func execute() {
-        NSWorkspace.shared.open(URL(fileURLWithPath: app.rootPath))
+        NSWorkspace.shared.open(app.rootPath)
     }
 }
 
@@ -38,7 +38,7 @@ class ShowDataContainerInFinder: AppAction {
     var title: String = "Show Data Container in Finder"
     
     @objc func execute() {
-        NSWorkspace.shared.open(URL(fileURLWithPath: app.rootPath))
+        NSWorkspace.shared.open(app.rootPath)
     }
 }
 

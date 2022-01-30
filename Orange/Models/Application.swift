@@ -7,11 +7,10 @@
 
 import AppKit
 
-private let defaultAppIcon = #imageLiteral(resourceName: "default_icon").appIcon()
 struct Application {
     //let uuid: String
     let device: Device
-    let rootPath: String
+    let rootPath: URL
     private(set) var bundleDisplayName: String
     let bundleIdentifier: String
     private(set) var version: String? = nil
@@ -22,25 +21,22 @@ struct Application {
     let bundleShortVersion: String
     let bundleVersion: String
     
-    init?(device: Device, rootPath: String) {
+    init?(device: Device, rootPath: URL) {
         self.device = device
         self.rootPath = rootPath
         let fileManager = FileManager.default
         //print("rootPath: \(rootPath)")
-        guard let appName = fileManager.applicationPath(of: rootPath) else {
+        guard let appName = fileManager.application(of: rootPath) else {
             return nil
         }
 
-        let metaData = NSDictionary(contentsOfFile: "\(rootPath)/.com.apple.mobile_container_manager.metadata.plist")
+        let metaData = NSDictionary(contentsOf: rootPath.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist"))
         guard let identifier = metaData?["MCMMetadataIdentifier"] as? String else {
             return nil
         }
         bundleIdentifier = identifier
-        
-        let appInfoPath = "\(rootPath)/\(appName)/Info.plist"
-        print("appInfoPath: \(appInfoPath)")
-        
-        guard let appInfoDict = NSDictionary(contentsOfFile: appInfoPath),
+                
+        guard let appInfoDict = NSDictionary(contentsOf: appName.appendingPathComponent("Info.plist")),
             let bundleId = appInfoDict["CFBundleIdentifier"] as? String,
             let name = (appInfoDict["CFBundleDisplayName"] as? String) ?? (appInfoDict["CFBundleName"] as? String),
             bundleId == bundleIdentifier else {
@@ -61,12 +57,14 @@ struct Application {
         
         let iconFiles = ((appInfoDict["CFBundleIcons"] as? NSDictionary)?["CFBundlePrimaryIcon"] as? NSDictionary)?["CFBundleIconFiles"] as? [String]
         if let iconFile = iconFiles?.last,
-            let bundle = Bundle(path: "\(rootPath)/\(appName)"),
+            let bundle = Bundle(url: appName),
             let icon = bundle.image(forResource: iconFile) {
             image = icon.appIcon()
         }else{
-            image = defaultAppIcon
+            image = #imageLiteral(resourceName: "default_icon").appIcon()
         }
+        
+        
     }
 }
 

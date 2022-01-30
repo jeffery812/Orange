@@ -9,7 +9,7 @@ import Foundation
 
 struct Device: Decodable {
     let availabilityError: String?
-    let dataPath: String
+    let dataPath: URL
     let logPath: String
     let udid: String
     let isAvailable: Bool
@@ -27,18 +27,35 @@ struct Device: Decodable {
 
 extension Device {
     var applications: [Application]? {
-        guard let files = try? FileManager.default.contentsOfDirectory(atPath: applicationPath) else {
+        guard let files = try? FileManager.default.contentsOfDirectory(at: bundleContainerPath, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants]) else {
             return nil
         }
+        
         let userApplications = files.map {
-            Application(device: self, rootPath: "\(applicationPath)\($0)")
+            Application(device: self, rootPath: $0)
         }.compactMap { $0 }
 
         return userApplications
     }
     
-    private var applicationPath: String {
-        dataPath + "/Containers/Bundle/Application/"
+    private var bundleContainerPath: URL {
+        dataPath.appendingPathComponent("Containers/Bundle/Application")
+    }
+
+    private var dataContainerPath: URL {
+        dataPath.appendingPathComponent("Containers/Data/Application")
+    }
+    
+    private var identifierBundleMap: [String: String] {
+        [:]
+    }
+    
+    private func identifier(with url: URL) -> String? {
+        if let contents = NSDictionary(contentsOf: url.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist")),
+           let identifier = contents["MCMMetadataIdentifier"] as? String {
+            return identifier
+        }
+        return nil
     }
     
     func boot() throws {
