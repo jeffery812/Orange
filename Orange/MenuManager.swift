@@ -24,15 +24,11 @@ class MenuManager {
                 guard let applications = device.applications else {
                     continue
                 }
-                print("\(version) == \(applications.count)")
                 let simulatorMenuItem = NSMenuItem(title: version, action: nil, keyEquivalent: "")
                 menu.addItem(simulatorMenuItem)
                 for application in applications {
-//                    let simulatorMenuItem = NSMenuItem(title: application.bundleName, action: nil, keyEquivalent: "")
-//                    menu.addItem(simulatorMenuItem)
-                    menu.addItem(AppMenuItem(app: application     ))
+                    menu.addItem(AppMenuItem(app: application))
                 }
-                
             }
         }
         
@@ -42,7 +38,7 @@ class MenuManager {
         }
         statusItem.menu = menu
         statusItem.button?.image = NSImage(named:NSImage.Name("statusItem_icon"))
-        logger.log("xcrun loadded, runtimes count: \(self.simulatorManager.devices.count)")
+        statusItem.button?.image?.isTemplate = true
     }
     
     

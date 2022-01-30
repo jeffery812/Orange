@@ -8,30 +8,30 @@
 import AppKit
 
 struct Application {
-    //let uuid: String
     let device: Device
     let bundleContainer: URL
     let dataContainer: URL?
-    private(set) var bundleDisplayName: String
+    let bundleDisplayName: String
     let bundleIdentifier: String
     private(set) var version: String? = nil
     private(set) var icon: NSImage? = nil
-    //let contentPath: String
     let image: NSImage
-    let attributedTitle: NSMutableAttributedString
     let bundleShortVersion: String
     let bundleVersion: String
+    let modified: Date?
     
     init?(device: Device, bundleContainer: URL, dataContainer: URL?) {
         self.device = device
         self.bundleContainer = bundleContainer
         self.dataContainer = dataContainer
         let fileManager = FileManager.default
-        //print("bundleContainer: \(bundleContainer)")
-        print("dataContainer: \(dataContainer)")
+
         guard let appName = fileManager.application(of: bundleContainer) else {
             return nil
         }
+        
+        let properties = try? FileManager.default.attributesOfItem(atPath: appName.path)
+        modified = properties?[.modificationDate] as? Date
 
         let metaData = NSDictionary(contentsOf: bundleContainer.appendingPathComponent(".com.apple.mobile_container_manager.metadata.plist"))
         guard let identifier = metaData?["MCMMetadataIdentifier"] as? String else {
@@ -51,12 +51,6 @@ struct Application {
         let version = appInfoDict["CFBundleVersion"] as? String ?? "NULL"
         bundleShortVersion = shortVersion
         bundleVersion = version
-
-        let title = "\(bundleDisplayName) (\(bundleVersion)-\(bundleShortVersion))"
-        let subTitle = "\n\(bundleIdentifier)"
-        attributedTitle = NSMutableAttributedString(string: title + subTitle)
-        attributedTitle.addAttributes([NSAttributedString.Key.font: NSFont.systemFont(ofSize: 13)], range: NSRange(location: 0, length: name.count))
-        attributedTitle.addAttributes([NSAttributedString.Key.font: NSFont.systemFont(ofSize: 11), NSAttributedString.Key.foregroundColor: NSColor.lightGray], range: NSRange(location: title.count, length: subTitle.count))
         
         let iconFiles = ((appInfoDict["CFBundleIcons"] as? NSDictionary)?["CFBundlePrimaryIcon"] as? NSDictionary)?["CFBundleIconFiles"] as? [String]
         if let iconFile = iconFiles?.last,
@@ -70,9 +64,13 @@ struct Application {
 }
 
 extension Application {
-    
-    var bundleContainerPath: String {
-        ""
+    var attributedTitle: NSMutableAttributedString {
+        let title = "\(bundleDisplayName) (\(bundleVersion)-\(bundleShortVersion))"
+        let subTitle = "\n\(bundleIdentifier)"
+        let attributedTitle = NSMutableAttributedString(string: title + subTitle)
+        attributedTitle.addAttributes([NSAttributedString.Key.font: NSFont.systemFont(ofSize: 13)], range: NSRange(location: 0, length: title.count))
+        attributedTitle.addAttributes([NSAttributedString.Key.font: NSFont.systemFont(ofSize: 11), NSAttributedString.Key.foregroundColor: NSColor.lightGray], range: NSRange(location: title.count, length: subTitle.count))
+        return attributedTitle
     }
     
     func launch() {
