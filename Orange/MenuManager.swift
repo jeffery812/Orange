@@ -51,28 +51,6 @@ class MenuManager {
         return menu
     }
     
-    
-    private func getAllApplications() -> [Application] {
-        var allApplications = [Application]()
-        for (_, deviceList) in simulatorManager.devices {
-            for device in deviceList {
-                let applications = device.applications
-                guard !applications.isEmpty else {
-                    continue
-                }
-                allApplications.append(contentsOf: applications)
-            }
-        }
-
-        return allApplications.sorted(by: { app1, app2 in
-            guard let date1 = app1.modified, let date2 = app2.modified else {
-                return false
-            }
-            return date1 > date2
-        })
-    }
-    
-    
     @objc private func refresh(_ sender: Any) {
         simulatorManager.refresh()
         statusItem.menu?.removeAllItems()

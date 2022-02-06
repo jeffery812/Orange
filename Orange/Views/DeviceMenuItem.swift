@@ -20,7 +20,13 @@ class DeviceMenuItem: NSMenuItem {
         self.state = device.state == .shutdown ? .off : .on
         self.submenu = NSMenu()
         
-        for application in device.applications {
+        let sortedApplications = device.applications.sorted(by: { app1, app2 in
+            guard let date1 = app1.modified, let date2 = app2.modified else {
+                return false
+            }
+            return date1 > date2
+        })
+        for application in sortedApplications {
             let menuItem = AppMenuItem(app: application)
             submenu?.addItem(menuItem)
         }
