@@ -10,9 +10,6 @@ import Cocoa
 class MenuManager {
     private let simulatorManager: SimulatorManager
     private let statusItem: NSStatusItem
-    private var systemItems = [
-        NSMenuItem(title: "Refresh", action: #selector(refresh(_:)), keyEquivalent: "r"),
-        NSMenuItem(title: "Quit", action: #selector(quitApp(_:)), keyEquivalent: "q") ]
 
     init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -24,16 +21,33 @@ class MenuManager {
     
     private func getMenus() -> NSMenu {
         let menu = NSMenu()
-        systemItems.forEach {
-            menu.addItem($0)
-            $0.target = self
+        
+        let refreshMenuItem = NSMenuItem(title: "Refresh", action: #selector(refresh(_:)), keyEquivalent: "r")
+        menu.addItem(refreshMenuItem)
+        refreshMenuItem.target = self
+        
+        menu.addItem(NSMenuItem.separator())
+
+        for runtime in simulatorManager.runtimes {
+            guard let devices = runtime.devices else {
+                continue
+            }
+
+            for device in devices {
+                guard device.applications.isEmpty == false else {
+                    continue
+                }
+                let deviceMenu = DeviceMenuItem(runtime, device: device)
+                menu.addItem(deviceMenu)
+            }
         }
 
         menu.addItem(NSMenuItem.separator())
-        for application in getAllApplications() {
-            menu.addItem(AppMenuItem(app: application))
-        }
-
+        
+        let quitMenuItem = NSMenuItem(title: "Quit", action: #selector(quitApp(_:)), keyEquivalent: "q")
+        menu.addItem(quitMenuItem)
+        quitMenuItem.target = self
+        
         return menu
     }
     
@@ -42,7 +56,8 @@ class MenuManager {
         var allApplications = [Application]()
         for (_, deviceList) in simulatorManager.devices {
             for device in deviceList {
-                guard let applications = device.applications else {
+                let applications = device.applications
+                guard !applications.isEmpty else {
                     continue
                 }
                 allApplications.append(contentsOf: applications)

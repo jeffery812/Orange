@@ -13,6 +13,7 @@
 		02080ED027A58DC700F6223A /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02080ECF27A58DC700F6223A /* NSImage.swift */; };
 		02080ED227A5911500F6223A /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02080ED127A5911500F6223A /* AppMenu.swift */; };
 		02080ED427A598A300F6223A /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02080ED327A598A300F6223A /* AppAction.swift */; };
+		023A0DC427AD3FCF00169ECD /* DeviceMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A0DC327AD3FCF00169ECD /* DeviceMenuItem.swift */; };
 		0249481E279B3DAB00182C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249481D279B3DAB00182C79 /* AppDelegate.swift */; };
 		02494820279B3DAB00182C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249481F279B3DAB00182C79 /* ViewController.swift */; };
 		02494822279B3DAD00182C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02494821279B3DAD00182C79 /* Assets.xcassets */; };
@@ -28,7 +29,6 @@
 		029715BB279C18930092FEFC /* simctrl.json in Resources */ = {isa = PBXBuildFile; fileRef = 029715BA279C18930092FEFC /* simctrl.json */; };
 		029715BD279C18F70092FEFC /* SimulatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715BC279C18F70092FEFC /* SimulatorManager.swift */; };
 		029715C2279C3BBC0092FEFC /* SimCtrlResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715C1279C3BBC0092FEFC /* SimCtrlResult.swift */; };
-		029715C5279C3E210092FEFC /* JSONDecoder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029715C4279C3E210092FEFC /* JSONDecoder+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,7 @@
 		02080ECF27A58DC700F6223A /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		02080ED127A5911500F6223A /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		02080ED327A598A300F6223A /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		023A0DC327AD3FCF00169ECD /* DeviceMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMenuItem.swift; sourceTree = "<group>"; };
 		0249481A279B3DAB00182C79 /* Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0249481D279B3DAB00182C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0249481F279B3DAB00182C79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		029715BA279C18930092FEFC /* simctrl.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = simctrl.json; sourceTree = "<group>"; };
 		029715BC279C18F70092FEFC /* SimulatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorManager.swift; sourceTree = "<group>"; };
 		029715C1279C3BBC0092FEFC /* SimCtrlResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCtrlResult.swift; sourceTree = "<group>"; };
-		029715C4279C3E210092FEFC /* JSONDecoder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +185,7 @@
 			children = (
 				0249481F279B3DAB00182C79 /* ViewController.swift */,
 				02080ED127A5911500F6223A /* AppMenu.swift */,
+				023A0DC327AD3FCF00169ECD /* DeviceMenuItem.swift */,
 				02080ECD27A57A8200F6223A /* AppMenuItem.swift */,
 			);
 			path = Views;
@@ -193,7 +194,6 @@
 		029715C3279C3E180092FEFC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				029715C4279C3E210092FEFC /* JSONDecoder+.swift */,
 				02080ECB27A4727C00F6223A /* FileManager+.swift */,
 				02080ECF27A58DC700F6223A /* NSImage.swift */,
 			);
@@ -333,6 +333,7 @@
 			files = (
 				029715C2279C3BBC0092FEFC /* SimCtrlResult.swift in Sources */,
 				02080ECE27A57A8200F6223A /* AppMenuItem.swift in Sources */,
+				023A0DC427AD3FCF00169ECD /* DeviceMenuItem.swift in Sources */,
 				0249484A279B403D00182C79 /* MenuManager.swift in Sources */,
 				02080ED227A5911500F6223A /* AppMenu.swift in Sources */,
 				02080EC427A2F87300F6223A /* Application.swift in Sources */,
@@ -342,7 +343,6 @@
 				02494820279B3DAB00182C79 /* ViewController.swift in Sources */,
 				02080ED427A598A300F6223A /* AppAction.swift in Sources */,
 				0249481E279B3DAB00182C79 /* AppDelegate.swift in Sources */,
-				029715C5279C3E210092FEFC /* JSONDecoder+.swift in Sources */,
 				029715BD279C18F70092FEFC /* SimulatorManager.swift in Sources */,
 				029715B3279C169C0092FEFC /* Device.swift in Sources */,
 				029715B9279C183E0092FEFC /* Pair.swift in Sources */,

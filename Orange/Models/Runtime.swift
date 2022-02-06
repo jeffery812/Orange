@@ -17,11 +17,16 @@ struct Runtime: Decodable {
     let version: String
     let isAvailable: Bool
     let supportedDeviceTypes: [SupportedDeviceType]
-}
+    var devices: [Device]?
 
-struct SupportedDeviceType: Decodable {
-    let bundlePath: String
-    let name: String
-    let identifier: String
-    let productFamily: String
+    struct SupportedDeviceType: Decodable {
+        let bundlePath: String
+        let name: String
+        let identifier: String
+        let productFamily: String
+    }
+    
+    mutating func update(devices: [Device]) {
+        self.devices = devices
+    }
 }

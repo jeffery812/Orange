@@ -8,7 +8,6 @@
 import Cocoa
 
 extension NSImage {
-    
     func appIcon(h:CGFloat = 35) -> NSImage {
         let size = NSSize(width: h, height: h)
         let cornerRadius: CGFloat = h/5

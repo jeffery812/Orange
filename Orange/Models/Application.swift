@@ -66,7 +66,7 @@ struct Application {
 extension Application {
     var attributedTitle: NSMutableAttributedString {
         let title = "\(bundleDisplayName) (\(bundleVersion)-\(bundleShortVersion))"
-        let subTitle = "\n\(bundleIdentifier)"
+        let subTitle = "\n\(bundleIdentifier)-\(device.name)"
         let attributedTitle = NSMutableAttributedString(string: title + subTitle)
         attributedTitle.addAttributes([NSAttributedString.Key.font: NSFont.systemFont(ofSize: 13)], range: NSRange(location: 0, length: title.count))
         attributedTitle.addAttributes([NSAttributedString.Key.font: NSFont.systemFont(ofSize: 11), NSAttributedString.Key.foregroundColor: NSColor.lightGray], range: NSRange(location: title.count, length: subTitle.count))

@@ -8,30 +8,28 @@
 import Foundation
 
 struct SimCtrlResult: Decodable {
-    let devicetypes: [DeviceType]
-    let runtimes: [Runtime]
+    let deviceTypes: [DeviceType]
+    var runtimes: [Runtime]
     let devices: [String: [Device]]
     let pairs: [String: Pair]
+    
+    private enum CodingKeys: String, CodingKey {
+        case deviceTypes = "devicetypes"
+        case runtimes
+        case devices
+        case pairs
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        deviceTypes = try container.decode([DeviceType].self, forKey: .deviceTypes)
+        runtimes = try container.decode([Runtime].self, forKey: .runtimes)
+        devices = try container.decode([String: [Device]].self, forKey: .devices)
+        pairs = try container.decode([String: Pair].self, forKey: .pairs)
+        
+        for i in 0..<runtimes.count {
+            runtimes[i].update(devices: devices[runtimes[i].identifier] ?? [])
+        }
+    }
 }
-//
-//extension SimCtrlResult {
-//    var applications: [Application] {
-//        let aa = devices.compactMap {
-//            print($0.value)
-//            
-//        }
-//        for (version, deviceList) in devices {
-//            for device in deviceList {
-//                print("\(version), \(device.name)")
-//                Application(device: device, rootPath: device.dataPath)
-//            }
-//        }
-//       
-//        let a = devices.map { (version, deviceList) in
-//            Application(rootPath: "")
-//        }
-//        return []
-//    }
-//}
-
 

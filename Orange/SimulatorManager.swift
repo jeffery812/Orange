@@ -37,6 +37,10 @@ class SimulatorManager {
     var devices: [String: [Device]] {
         simCtrlResult?.devices ?? [:]
     }
+    
+    var runtimes: [Runtime] {
+        simCtrlResult?.runtimes ?? []
+    }
 }
 
 @discardableResult

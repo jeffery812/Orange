@@ -27,13 +27,13 @@ struct Device: Decodable {
 }
 
 extension Device {
-    var applications: [Application]? {
+    var applications: [Application] {
         guard let bundles = try? FileManager.default.contentsOfDirectory(
             at: dataPath.appendingPathComponent("Containers/Bundle/Application"),
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants])
         else {
-            return nil
+            return []
         }
         
         guard let datas = try? FileManager.default.contentsOfDirectory(
@@ -41,7 +41,7 @@ extension Device {
             includingPropertiesForKeys: [.isDirectoryKey],
             options: [.skipsHiddenFiles, .skipsPackageDescendants, .skipsSubdirectoryDescendants])
         else {
-            return nil
+            return []
         }
         
         let identifierBundleMapping = bundles.reduce([String: URL]()) { dict, url in
