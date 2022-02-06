@@ -6,7 +6,7 @@
 Orange is a free and open source, works without any problems with Xcode 13.
 
 <p align="center">
-<img src="https://github.com/zhihuitang/orange/master/orange-screen-shot.png?raw=true">
+<img src="https://github.com/zhihuitang/orange/raw/master/orange-screen-shot.png?raw=true">
 </p>
 
 Do you like this app? Write a post about it, or just share link to this page in any social network.
